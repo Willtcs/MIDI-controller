@@ -95,6 +95,7 @@
 // LIBRARIES
 // -- Defines the MIDI library -- //
 
+/*
 //////////////////////////////////////
 // If using Fast Led
 #ifdef USING_NEOPIXEL
@@ -117,13 +118,15 @@ byte ledIndex[NUM_LEDS] = {0, 1, 2, 3};
 
 #endif
 //////////////////////////////////////
+*/
 
 // if using with ATmega328 - Uno, Mega, Nano...
 #ifdef ATMEGA328
 #include <MIDI.h>
-//MIDI_CREATE_DEFAULT_INSTANCE();
+MIDI_CREATE_DEFAULT_INSTANCE();
 #endif
 
+/*
 // if using with ATmega32U4 - Micro, Pro Micro, Leonardo...
 #ifdef ATMEGA32U4
 #include <MIDIUSB.h>
@@ -140,6 +143,7 @@ MIDI_CREATE_INSTANCE(HardwareSerial, Serial1, midi2);
 // Documentation: https://www.arduino.cc/reference/en/libraries/esp32-ble-midi/
 char bleMIDIDeviceName[] = {"BLE Controller"}; // put here the name you want for your device
 #endif
+*/
 
 //////////////////////////////////////
 // if using the 74HC595 bit shifter
@@ -148,6 +152,7 @@ char bleMIDIDeviceName[] = {"BLE Controller"}; // put here the name you want for
 // You can choose the latch pin yourself.
 const int ShiftPWM_latchPin = 18;
 
+/*
 // ** uncomment this part to NOT use the SPI port and change the pin numbers. This is 2.5x slower **
 #define SHIFTPWM_NOSPI
 const int ShiftPWM_dataPin = 9;
@@ -164,9 +169,11 @@ const bool ShiftPWM_balanceLoad = false;
 
 #include <ShiftPWM.h>   // include ShiftPWM.h after setting the pins!
 // Download: https://github.com/elcojacobs/ShiftPWM
+*/
 
 #endif // USING_74HC595
 
+/*
 //////////////////////
 // Add this lib if using a cd4067 multiplexer
 #ifdef USING_MUX
@@ -194,7 +201,7 @@ const bool ShiftPWM_balanceLoad = false;
 //#include <Fonts/FreeMono9pt7b.h>  // Add a custom font
 Adafruit_SSD1306 display(128, 64);  // Create display - size of the display in pixels
 #endif
-
+*/
 
 ///////////////////////////////////////////
 // MULTIPLEXERS
