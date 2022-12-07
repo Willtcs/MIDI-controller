@@ -252,9 +252,8 @@ const byte N_BUTTONS = 16; //*  total numbers of buttons. Number of buttons in t
 #ifdef USING_MUX // Fill if you are using mux, otherwise just leave it
 const byte N_BUTTONS_PER_MUX[N_MUX] = {8, 8}; //* number of buttons in each mux (in order)
 const byte BUTTON_MUX_PIN[N_MUX][16] = { //* pin of each button of each mux in order
-
-{1, 2, 0, 5, 4, 3, 6, 7, 10, 9, 8, 13, 12, 11, 15, 14}, // 1
-{2, 1, 0, 5, 4, 3, 7, 6, 9, 8, 13, 12, 15}, // 2
+{1, 2, 3, 4, 5, 6, 7, 15}, //* pins of the first mux
+{1, 2, 3, 4, 5, 6, 7, 15}, //* pins of the second mux
 };
 
 int buttonMuxThreshold = 850;
@@ -336,7 +335,6 @@ const byte N_POTS_ARDUINO = 2; //* number of pots connected straight to the Ardu
 // If using ESP32 only use the GPIO number as "11, 10"
 const byte POT_ARDUINO_PIN[N_POTS_ARDUINO] = {A0, A1}; //* pins of each pot connected straight to the Arduino (don't use "A" if you are using ESP32, only the number)
 
-*/
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -350,7 +348,7 @@ const byte POT_MUX_PIN[N_MUX][16] = { //* pins of each pot of each mux in the or
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-/*
+
 #define USING_CUSTOM_CC_N 1 //* comment if not using CUSTOM CC NUMBERS, uncomment if using it.
 #ifdef USING_CUSTOM_CC_N
 byte POT_CC_N[N_POTS] = {1, 2}; // Add the CC NUMBER or MACKIE of each pot you want
