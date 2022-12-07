@@ -190,6 +190,7 @@ Adafruit_SSD1306 display(128, 64);  // Create display - size of the display in p
 */
 
 ///////////////////////////////////////////
+/*
 // MULTIPLEXERS
 #ifdef USING_MUX
 
@@ -232,6 +233,8 @@ Multiplexer4067 mux[N_MUX] = {
 #include "MACKIE.h"
 #endif
 
+*/
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -240,9 +243,9 @@ Multiplexer4067 mux[N_MUX] = {
 // BUTTONS
 #ifdef USING_BUTTONS
 
-const byte N_BUTTONS = 3; //*  total numbers of buttons. Number of buttons in the Arduino + number of buttons on multiplexer 1 + number of buttons on multiplexer 2... (DON'T put Octave and MIDI channel (bank) buttons here)
-const byte N_BUTTONS_ARDUINO = 3; //* number of buttons connected straight to the Arduino
-const byte BUTTON_ARDUINO_PIN[N_BUTTONS] = {2, 3, 4}; //* pins of each button connected straight to the Arduino
+const byte N_BUTTONS = 16; //*  total numbers of buttons. Number of buttons in the Arduino + number of buttons on multiplexer 1 + number of buttons on multiplexer 2... (DON'T put Octave and MIDI channel (bank) buttons here)
+//const byte N_BUTTONS_ARDUINO = 3; //* number of buttons connected straight to the Arduino
+//const byte BUTTON_ARDUINO_PIN[N_BUTTONS] = {2, 3, 4}; //* pins of each button connected straight to the Arduino
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -279,6 +282,7 @@ byte MESSAGE_VAL[N_BUTTONS] = {36, 37, 38};
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+/*
 #ifdef USING_BANKS_WITH_BUTTONS
 
 //#define USING_MUX_BANK_BUTTON_PIN 1; // Define if you are using the bank buttons on the Mux pin. It has to be the first mux.
@@ -295,12 +299,16 @@ const byte OCTAVE_BUTTON_PIN[2] = {5, 4}; //* first will decrease MIDI channel a
 
 #endif // USING_OCTAVE
 
+*/
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 //#define pin13 1 // uncomment if you are using pin 13 (pin with led), or comment the line if it is not
 byte pin13index = 12; //* put the index of the pin 13 of the buttonPin[] array if you are using, if not, comment
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+/*
 
 // it will happen if you are using neo pixel
 // this button will open the menu so you can change the MIDI channel
@@ -330,6 +338,8 @@ const byte N_POTS_ARDUINO = 2; //* number of pots connected straight to the Ardu
 // If using ESP32 only use the GPIO number as "11, 10"
 const byte POT_ARDUINO_PIN[N_POTS_ARDUINO] = {A0, A1}; //* pins of each pot connected straight to the Arduino (don't use "A" if you are using ESP32, only the number)
 
+*/
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 #ifdef USING_MUX
@@ -344,6 +354,7 @@ const byte POT_MUX_PIN[N_MUX][16] = { //* pins of each pot of each mux in the or
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+/*
 #define USING_CUSTOM_CC_N 1 //* comment if not using CUSTOM CC NUMBERS, uncomment if using it.
 #ifdef USING_CUSTOM_CC_N
 byte POT_CC_N[N_POTS] = {1, 2}; // Add the CC NUMBER or MACKIE of each pot you want
@@ -462,6 +473,7 @@ byte display_pos_y = 7; // pos y
 byte display_text_size = 7; // text font size
 
 
+
 /////////////////////////////////////////////
 // 75HC595
 #ifdef USING_74HC595
@@ -558,3 +570,5 @@ int capSensitivity = 150; // touch threshold
 int capTimeout = 500;
 
 #endif // USING_MOTORIZED_FADERS
+
+*/
