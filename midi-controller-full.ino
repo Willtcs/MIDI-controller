@@ -250,13 +250,11 @@ const byte N_BUTTONS = 16; //*  total numbers of buttons. Number of buttons in t
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 #ifdef USING_MUX // Fill if you are using mux, otherwise just leave it
-const byte N_BUTTONS_PER_MUX[N_MUX] = {16, 13, 5}; //* number of buttons in each mux (in order)
+const byte N_BUTTONS_PER_MUX[N_MUX] = {8, 8}; //* number of buttons in each mux (in order)
 const byte BUTTON_MUX_PIN[N_MUX][16] = { //* pin of each button of each mux in order
 
 {1, 2, 0, 5, 4, 3, 6, 7, 10, 9, 8, 13, 12, 11, 15, 14}, // 1
 {2, 1, 0, 5, 4, 3, 7, 6, 9, 8, 13, 12, 15}, // 2
-{6, 5, 4, 3, 8},
-// ...
 };
 
 int buttonMuxThreshold = 850;
@@ -343,12 +341,10 @@ const byte POT_ARDUINO_PIN[N_POTS_ARDUINO] = {A0, A1}; //* pins of each pot conn
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 #ifdef USING_MUX
-const byte N_POTS_PER_MUX[N_MUX] = {0, 3, 1}; //* number of pots in each multiplexer (in order)
+const byte N_POTS_PER_MUX[N_MUX] = {8, 9, 10}; //* number of pots in each multiplexer (in order)
 const byte POT_MUX_PIN[N_MUX][16] = { //* pins of each pot of each mux in the order you want them to be
-{}, //* pins of the first mux
-{10, 11, 14},
-{7}
-// ...
+{1, 2, 3, 4, 5, 6, 7, 15}, //* pins of the first mux
+{1, 2, 3, 4, 5, 6, 7, 15}, //* pins of the second mux
 };
 #endif
 
