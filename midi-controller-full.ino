@@ -190,11 +190,14 @@ Adafruit_SSD1306 display(128, 64);  // Create display - size of the display in p
 */
 
 ///////////////////////////////////////////
-/*
+
 // MULTIPLEXERS
 #ifdef USING_MUX
 
-#define N_MUX 1 //* number of multiplexers
+#define N_MUX 2 //* number of multiplexers
+
+/*
+
 //* Define s0, s1, s2, s3, and x pins
 #define s0 18
 #define s1 19
@@ -202,8 +205,8 @@ Adafruit_SSD1306 display(128, 64);  // Create display - size of the display in p
 #define s3 21
 
 #define x1 A0 // analog pin of the first mux
-//#define x2 A1 // analog pin of the first mux
-//#define x3 A2 // analog pin of the first mux
+#define x2 A1 // analog pin of the first mux
+#define x3 A2 // analog pin of the first mux
 
 // add more #define and the x number if you need
 
@@ -218,7 +221,11 @@ Multiplexer4067 mux[N_MUX] = {
   //  Multiplexer4067(s0, s1, s2, s3, x3) // The SIG pin where the multiplexer is connnected
   // ...
 };
+
+*/
 #endif
+
+/*
 
 #ifdef USING_POTENTIOMETERS
 // include the ResponsiveAnalogRead library
@@ -246,6 +253,7 @@ Multiplexer4067 mux[N_MUX] = {
 const byte N_BUTTONS = 16; //*  total numbers of buttons. Number of buttons in the Arduino + number of buttons on multiplexer 1 + number of buttons on multiplexer 2... (DON'T put Octave and MIDI channel (bank) buttons here)
 //const byte N_BUTTONS_ARDUINO = 3; //* number of buttons connected straight to the Arduino
 //const byte BUTTON_ARDUINO_PIN[N_BUTTONS] = {2, 3, 4}; //* pins of each button connected straight to the Arduino
+#endif
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
