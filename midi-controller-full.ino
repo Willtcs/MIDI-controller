@@ -1,19 +1,3 @@
-/*
-  Made by Gustavo Silveira, 2021.
-
-  http://www.musiconerd.com
-  http://www.youtube.com/musiconerd
-  http://facebook.com/musiconerdmusiconerd
-  http://instagram.com/musiconerd/
-  http://www.gustavosilveira.net
-  gustavosilveira@musiconerd.com
-
-  If you are using for anything that's not for personal use don't forget to give credit.
-
-  PS: Just change the value that has a comment like " //* "
-
-*/
-
 /////////////////////////////////////////////
 // Choosing your board
 // Define your board, choose:
@@ -23,7 +7,7 @@
 // "BLEMIDI" if using BLE MIDI (ESP32)
 // "DEBUG" if you just want to debug the code in the serial monitor
 
-#define DEBUG 1//* put here the uC you are using, like in the lines above followed by "1", like "ATMEGA328 1", "DEBUG 1", etc.
+#define ATMEGA328 1//* put here the uC you are using, like in the lines above followed by "1", like "ATMEGA328 1", "DEBUG 1", etc.
 
 /////////////////////////////////////////////
 // Are you using buttons?
@@ -31,11 +15,11 @@
 
 /////////////////////////////////////////////
 // Are you using potentiometers?
-#define USING_POTENTIOMETERS 1 //* comment if not using potentiometers
+//#define USING_POTENTIOMETERS 1 //* comment if not using potentiometers
 
 /////////////////////////////////////////////
 // Are you using a multiplexer?
-//#define USING_MUX 1 //* comment if not using a multiplexer, uncomment if using it.
+#define USING_MUX 1 //* comment if not using a multiplexer, uncomment if using it.
 
 /////////////////////////////////////////////
 // Are you using encoders?
@@ -84,7 +68,7 @@
 //#define USING_OCTAVE 1
 
 // Are you using Physical MIDI din 5-pin connector?
-//#define MIDI_DIN 1
+#define MIDI_DIN 1
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -96,15 +80,16 @@
 // -- Defines the MIDI library -- //
 
 //////////////////////////////////////
+/*
 // If using Fast Led
-#ifdef USING_NEOPIXEL
+//#ifdef USING_NEOPIXEL
 
 #include "FastLED.h" // by Daniel Garcia - http://fastled.io
 
 FASTLED_USING_NAMESPACE
 
 #define DATA_PIN    9
-//#define CLK_PIN   4
+#define CLK_PIN   4
 #define LED_TYPE    WS2812
 #define COLOR_ORDER GRB
 #define NUM_LEDS    4
@@ -116,14 +101,17 @@ byte ledIndex[NUM_LEDS] = {0, 1, 2, 3};
 #define FRAMES_PER_SECOND  120
 
 #endif
+*/
+
 //////////////////////////////////////
 
 // if using with ATmega328 - Uno, Mega, Nano...
 #ifdef ATMEGA328
 #include <MIDI.h>
-//MIDI_CREATE_DEFAULT_INSTANCE();
+MIDI_CREATE_DEFAULT_INSTANCE();
 #endif
 
+/*
 // if using with ATmega32U4 - Micro, Pro Micro, Leonardo...
 #ifdef ATMEGA32U4
 #include <MIDIUSB.h>
@@ -140,6 +128,7 @@ MIDI_CREATE_INSTANCE(HardwareSerial, Serial1, midi2);
 // Documentation: https://www.arduino.cc/reference/en/libraries/esp32-ble-midi/
 char bleMIDIDeviceName[] = {"BLE Controller"}; // put here the name you want for your device
 #endif
+*/
 
 //////////////////////////////////////
 // if using the 74HC595 bit shifter
@@ -148,11 +137,12 @@ char bleMIDIDeviceName[] = {"BLE Controller"}; // put here the name you want for
 // You can choose the latch pin yourself.
 const int ShiftPWM_latchPin = 18;
 
+/*
 // ** uncomment this part to NOT use the SPI port and change the pin numbers. This is 2.5x slower **
 #define SHIFTPWM_NOSPI
 const int ShiftPWM_dataPin = 9;
 const int ShiftPWM_clockPin = 19;
-
+*/
 
 // If your LED's turn on if the pin is low, set this to true, otherwise set it to false.
 const bool ShiftPWM_invertOutputs = false;
@@ -168,17 +158,19 @@ const bool ShiftPWM_balanceLoad = false;
 #endif // USING_74HC595
 
 //////////////////////
+/*
 // Add this lib if using a cd4067 multiplexer
 #ifdef USING_MUX
 #include <Multiplexer4067.h> // Multiplexer CD4067 library >> https://github.com/sumotoy/Multiplexer4067
 #endif
-
+*/
 //////////////////////
 // Threads
 #include <Thread.h> // Threads library >> https://github.com/ivanseidel/ArduinoThread
 #include <ThreadController.h> // Same as above
 
 //////////////////////
+/*
 // Encoder
 #ifdef USING_ENCODER
 // In the downloads manager download the Encoder lib from Paul Stoffregen (it comes with the Teensy)
@@ -195,6 +187,7 @@ const bool ShiftPWM_balanceLoad = false;
 Adafruit_SSD1306 display(128, 64);  // Create display - size of the display in pixels
 #endif
 
+*/
 
 ///////////////////////////////////////////
 // MULTIPLEXERS
