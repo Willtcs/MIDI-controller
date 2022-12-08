@@ -189,7 +189,7 @@ const bool ShiftPWM_balanceLoad = false;
 Adafruit_SSD1306 display(128, 64);  // Create display - size of the display in pixels
 #endif
 
-*/
+
 
 ///////////////////////////////////////////
 
@@ -198,7 +198,7 @@ Adafruit_SSD1306 display(128, 64);  // Create display - size of the display in p
 
 #define N_MUX 2 //* number of multiplexers
 
-/*
+
 
 //* Define s0, s1, s2, s3, and x pins
 #define s0 18
