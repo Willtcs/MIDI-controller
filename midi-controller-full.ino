@@ -19,7 +19,7 @@
 
 /////////////////////////////////////////////
 // Are you using a multiplexer?
-#define USING_MUX 1 //* comment if not using a multiplexer, uncomment if using it.
+#define USING_MUX 2 //* comment if not using a multiplexer, uncomment if using it.
 
 /////////////////////////////////////////////
 // Are you using encoders?
