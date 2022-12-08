@@ -111,16 +111,18 @@ byte ledIndex[NUM_LEDS] = {0, 1, 2, 3};
 MIDI_CREATE_DEFAULT_INSTANCE();
 #endif
 
-/*
+
 // if using with ATmega32U4 - Micro, Pro Micro, Leonardo...
-#ifdef ATMEGA32U4
-#include <MIDIUSB.h>
+//#ifdef ATMEGA32U4
+//#include <MIDIUSB.h>
 
 #ifdef MIDI_DIN
 #include <MIDI.h> // adds the MIDI library to use the hardware serial with a MIDI cable
 MIDI_CREATE_INSTANCE(HardwareSerial, Serial1, midi2);
 #endif //MIDI_DIN
 
+
+/*
 #endif // ATMEGA32U4
 
 #ifdef BLEMIDI
